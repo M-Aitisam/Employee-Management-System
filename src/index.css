@@ -9,3 +9,10 @@
 body{
   background-color:#111;
 }
+
+
+/* /components/other/EmployeeDashboardTaskList  Style*/
+#EmployeeDashboardTaskList::-webkit-scrollbar{
+  display: none;
+}
+/* /components/other/EmployeeDashboardTaskList End*/
