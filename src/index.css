@@ -16,3 +16,9 @@ body{
   display: none;
 }
 /* /components/other/EmployeeDashboardTaskList End*/
+
+
+
+#AdminDashboardAllTask::-webkit-scrollbar{
+display: none;
+}
