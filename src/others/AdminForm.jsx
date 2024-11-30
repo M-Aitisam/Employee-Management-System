@@ -18,8 +18,7 @@ const AdminForm = () => {
               <input
                 type="date"
                 className="text-sm py-1 w-4/5 rounded outline-none bg-transparent border-[1px] border-gray-400 mb-4"
-                
-              />
+               />
             </div>
             <div>
               <h3 className='text-sm text-grey-300 mb-0.5'>Assign To</h3>
