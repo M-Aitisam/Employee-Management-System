@@ -6,9 +6,9 @@ const App = () => {
   return (
     <>
     {/* In Component Auth Login add */}
-  {/* <Login /> */}
+  <Login />
   {/* <EmployeeDashboard />  */}
-  <AdminDashboard />
+  {/* <AdminDashboard /> */}
     </>
   )
 }
