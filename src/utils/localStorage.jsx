@@ -161,13 +161,19 @@
     "id": 1,
     "email": "admin@example.com",
     "password": "aitisam"
-  }
-];
+  }];
 
-export const setLocalStorage = ()=> {
-localStorage.setItem('employees' , JSON.stringify(employees))
+
+
+  export const setLocalStorage = ()=> {
+    localStorage.setItem('employees' , JSON.stringify(employees))
+    localStorage.setItem('admin' , JSON.stringify(admin))
 }
 export const getLocalStorage = ()=> {
-    
+    var data1 = localStorage.getItem('employees')
+    var data2 = localStorage.getItem('admin')
+
+    console.log(JSON.parse(data1));
+    console.log(JSON.parse(data2));
 }
   
