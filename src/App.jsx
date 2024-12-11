@@ -2,7 +2,14 @@ import React from 'react'
 import Login from "./components/Auth/Login"
 import EmployeeDashboard from "./components/Dashboard/EmployeeDashboard"
 import AdminDashboard from './components/Dashboard/AdminDashboard'
+
+
 const App = () => {
+
+  // main  stack  ka side ma function chalana ka kam  karta ha 
+  useEffect(() => {
+   setLocalStorage()
+  }, );
   return (
     <>
     {/* In Component Auth Login add */}
