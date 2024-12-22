@@ -1,24 +1,36 @@
-import React , {useEffect} from 'react'
-import Login from "./components/Auth/Login"
-import EmployeeDashboard from "./components/Dashboard/EmployeeDashboard"
-import AdminDashboard from './components/Dashboard/AdminDashboard'
+import React, { useState, useEffect } from 'react';
+import Login from "./components/Auth/Login";
+import EmployeeDashboard from "./components/Dashboard/EmployeeDashboard";
+import AdminDashboard from './components/Dashboard/AdminDashboard';
 import { getLocalStorage } from "./utils/localStorage.jsx";
 
 const App = () => {
+  const [user, setUser] = useState(null);  // Corrected here
 
-  // main  stack  ka side ma function chalana ka kam  karta ha 
+  const handleLogin = (email, password) => {
+    if (email === 'admin@me.com' && password === 'aitisam') {
+      console.log("This is admin");
+      setUser("admin");
+    } else if (email === 'user@me.com' && password === 'aitisam') {
+      console.log("This is User");
+      setUser("user");
+    } else {
+      alert("Invalid Credentials");
+    }
+  };
+
   useEffect(() => {
-  //  setLocalStorage()
-   getLocalStorage()
-  });
-  return (
-    <>
-  <Login />
-    {/* In Component Auth Login add */}
-  {/* <EmployeeDashboard />  */}
-  {/* <AdminDashboard /> */}
-    </>
-  )
-}
+    getLocalStorage();
+  }, []);  // Added dependency array to avoid infinite loop
 
-export default App
+    return (
+      <>
+      {!user ? <Login handleLogin= {handleLogin} /> : ''}
+{user == 'admin' ? <AdminDashboard /> : <EmployeeDashboard />}
+      {/* In Component Auth Login add */}
+    
+      </>
+    )
+  }
+
+  export default App
